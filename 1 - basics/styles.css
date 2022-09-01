@@ -4,3 +4,38 @@ body {
   margin: 30px;
   font-family: "Poppins";
 }
+.grid-container{
+  background: aquamarine;
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  grid-template-rows: 100px 200px 300px;
+  grid-gap: 10px;
+  justify-items: stretch; /*varias forams de justificação HORIZONTAIS*/
+  align-items: stretch;  /*varias forams de justificação VERTICAIS*/
+}
+.grid-container>div{
+  background: rgb(136, 131, 91);
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #777;
+}
+
+.grid-container >div:nth-child(1){
+  grid-column: 1/ span 2; /*vai começar em 1 e ocupar dois espaços de coluna*/
+}
+.grid-container>div:nth-child(2){
+  grid-column: span 3; /*vai ocupar 3 espaços de coluna*/
+  align-self: center; /*quando é um item em especifico, usar o SELF*/
+}
+.grid-container>div:nth-child(3){
+  grid-column: span 1 ;
+}
+.grid-container>div:nth-child(4){
+  grid-column: 2/6 ;
+  justify-self: end  ;
+}
+.grid-container>div:nth-child(5){
+  grid-column: span 3 ;
+}
